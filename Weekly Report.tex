@@ -1,0 +1,200 @@
+\documentclass[12pt,a4paper]{article}  
+%\usepackage[vietnam]{babel}
+\usepackage[utf8]{vietnam}
+%\usepackage{type1cm}
+\usepackage{a4wide,amssymb,epsfig,latexsym,multicol,array,hhline,fancyhdr}
+\usepackage{lastpage} 
+\usepackage[left=2.5cm,right=1.5cm,top=1.5cm,bottom=2.5cm]{geometry}
+\usepackage{enumerate}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{exscale}
+\usepackage{eucal}
+\usepackage{multirow}
+\usepackage{indentfirst} %Thụt vào đầu dòng khi bắt đầu đoạn văn bản mới.
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{caption} 
+\usepackage{rotating}
+\usepackage{graphics}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{epsfig}
+\usepackage{subfig}
+\usepackage{wrapfig}
+\usepackage{hyperref}
+%\usepackage{subfigure}
+\usepackage{tikz}
+%\usepackage{placeins}
+\usepackage{pifont}
+\usepackage{appendix}
+\usepackage{booktabs}
+\usetikzlibrary{arrows,snakes,backgrounds}
+\newtheorem{theorem}{{\bf Theorem}}
+\newtheorem{property}{{\bf Property}}
+\newtheorem{proposition}{{\bf Proposition}}
+\newtheorem{corollary}[proposition]{{\bf Corollary}}
+
+
+\newcounter{numproblem}
+\newenvironment{problem}{\addtocounter{numproblem}{1}
+\noindent{\large \bf Problem \thenumproblem. }}{}
+\newcounter{numexercise}
+\newenvironment{exercise}{\addtocounter{numexercise}{1}
+\noindent{\large \bf Câu \thenumexercise. \\}}{}
+
+%\newcounter{numsolution}
+\newenvironment{solution}{
+\noindent{\large \bf Lời giải.}\color{blue}}{~~\hfill$\Box$\\}
+
+\newif\ifshortversion
+\shortversiontrue 	% hide this line when shortversion==false
+\newcommand\version[2]{\ifshortversion #1 \else #2 \fi}
+\newcommand{\specialcell}[2][c]{%
+	\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+%\usepackage{fancyhdr}
+\setlength{\headheight}{40pt}
+\pagestyle{fancy}
+\fancyhead{} % clear all header fields
+\fancyhead[L]{
+ \begin{tabular}{rl}
+    \begin{picture}(25,15)(0,0)
+    \put(0,-8){\includegraphics[width=8mm, height=8mm]{LogoBK.jpg}}
+    %\put(0,-8){\epsfig{width=10mm,figure=hcmut.eps}}
+   \end{picture}&
+	%\includegraphics[width=8mm, height=8mm]{hcmut.png} & 
+	\begin{tabular}{l}
+		{ {\texttt{Trường Đại Học Bách Khoa}}}\\
+		{  {\texttt{Khoa Khoa Học \& Kỹ Thuật Máy Tính}}}
+	\end{tabular} 	
+ \end{tabular}
+}
+\fancyhead[R]{
+	\begin{tabular}{l}
+		\tiny \bf \\
+		\tiny \bf 
+	\end{tabular}  }
+\fancyfoot{} % clear all footer fields
+%\fancyfoot[L]{\scriptsize \texttt{ Đề tài: Năng lượng sạch}}
+\fancyfoot[R]{\scriptsize { \texttt{Trang {\thepage}/\pageref{LastPage}}}}
+\fancyfoot[L]{\scriptsize {\texttt{Ứng dụng hệ thống nhúng nâng cao - 2017}}}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0.3pt}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+ 
+\lstset{frame=tb,
+  language=R,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+\begin{document}
+\begin{titlepage}
+\begin{flushleft}
+\begin{center}
+\textbf{\Large ĐẠI HỌC QUỐC GIA THÀNH PHỐ HỒ CHÍ MINH}\\
+\textbf{\Large TRƯỜNG ĐẠI HỌC BÁCH KHOA}\\
+-----------------------$\bigstar$-----------------------
+\end{center}
+\end{flushleft}
+\vspace{1cm}
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=45mm]{LogoBK.jpg}
+\end{center}
+\end{figure}
+\vspace{1cm}
+\begin{center}
+\begin{tabular}{c}
+\hline
+\textbf{{\large BÁO CÁO TUẦN 17}}\\
+\multicolumn{1}{l}{\textbf{{\LARGE LUẬN VĂN TỐT NGHIỆP}}}\\
+~~\\
+\hline
+\end{tabular}
+
+%\textbf{{\LARGE ĐỀ TÀI 4: BÀI TOÁN TIỀN LƯƠNG HƯU}}
+\end{center}
+\vspace{2cm}
+\begin{minipage}[t]{0.650\linewidth}
+GVGD: Phạm Hoàng Anh
+\end{minipage}
+\begin{minipage}[t]{0.90\linewidth}
+Họ \& Tên:\\
+\begin{tabular}{lcl}
+Nguyễn Hương  &$\displaystyle{-}$& $\textsc{1411646}$ \\
+Bùi Thanh Tùng  &$\displaystyle{-}$& $\textsc{1414517}$ \\
+%\hline 
+
+\end{tabular} 
+\end{minipage}
+\\ \\ \\ \\ \\ \\ \\
+
+\vspace{3cm}
+\begin{center}
+\begin{center}
+Tp.HCM, tháng 05 năm 2018
+\end{center}
+\end{center}
+\end{titlepage}
+\newpage
+\begin{center}
+{\color{blue}  {\tableofcontents}}
+ \end{center} %summary insertion
+\newpage
+\section{Tất cả phần việc đã làm được tới hiện tại }
+\textrm{- Điều khiển được các tư thế: Đi thẳng, sang phải, sang trái, quay trái, quay phải, cúi xuống bê đồ, đá chân}.\par
+\textrm{- Phát được wifi edison từ board edison khi cấp nguồn ngoài một cách tự động}.\par
+\textrm{- Hiện thực được website chứa giao diện nút nhấn để điều khiển robot qua wifi}.\par
+\textrm{- Viết được app dùng API phát hiện giọng nói của google dùng để gửi lệnh điều khiển robot qua edison. Lệnh cơ bản : turn left, turn right, up, down}.\par
+\textrm{- Kết nối, cấu hình và điều khiển thành công robot qua PS2. Đây sẽ là cách điều khiển chính khi demo}.\par
+\textrm{- Khởi động và cấu hình BLE trên board edison. Dùng app BlueTerm có sẵn đã kết nối được với BLE edison}.\par
+\textrm{- Đã gửi được tín hiệu từ app BlueTerm sang edison, và từ edison sang BlueTerm}.\par
+\textrm{- Đọc giá trị sensor trên 9DOF block. Xử lý được giá trị để phát hiện được té ngã.}.\par
+\newpage
+\newpage
+\section{Khảo sát chuyển động khi cho robot di chuyển 10m }
+\textrm{- Robot đã di chuyển được quãng đường 10m mà không phải can thiệp ngoại lực bên ngoài}.\par
+\textrm{- Tuy nhiên robot đã đi một đường lệch không phải đường thẳng hoàn toàn}.\par
+\textrm{- Vận tốc đo đạc được là: 3mét/1phút hoặc chạy hết 10 mét trong vòng 3 phút 20 giây}.\par
+\newpage
+\newpage
+\section{Các phần việc đang tiến hành }
+\textrm{- Phát hiện hướng ngã, lực tác động lên robot để tự động cân bằng cho robot}.\par
+\textrm{- Phát triển app Bluetooth riêng dựa trên app có sẵn}.\par
+\textrm{- Thiết kế giao diện app Bluetooth}.\par
+\textrm{-}.\par
+\textrm{-}.\par
+\newpage
+\newpage
+\section{Dự kiến báo cáo tiến độ tuần sau }
+\textrm{-}.\par
+\textrm{-}.\par
+\textrm{-}.\par
+\textrm{-}.\par
+\newpage
+
+\begin{thebibliography}{39}
+\bibitem{Luque:2003}
+Sheldon M.Ross,
+\textit{Introduction to Probability Models, $10^{th}$ Edition}.
+\bibitem{website17}Websites:\url{http://math.stackexchange.com/questions/91646/markov-chain-pensioner-problem}.
+\bibitem{website17}Websites:\url{http://math.stackexchange.com/questions/382385/markov-chain-problem-in-rosss-introduction-to-probability-models}.
+\end{thebibliography}
+\end{document}
